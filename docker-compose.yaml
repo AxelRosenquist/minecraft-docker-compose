@@ -1,0 +1,27 @@
+services:
+  mc:
+    image: itzg/minecraft-server:latest
+    tty: true
+    stdin_open: true
+    ports:
+      - "ports:ports"
+    environment:
+      VERSION: "1.21.7"
+      TYPE: "VANILLA"
+      EULA: "TRUE"
+      MEMORY: "7168M"
+      SEED: "random seed"
+      MOTD: "Message of the day"
+      ICON: "Link to icon"
+      OVERRIDE_ICON: "true"
+      USE_AIKAR_FLAGS: "true"
+      TZ: "time/zone"
+      DIFFICULTY: "2"
+      FORCE_GAMEMODE: "true"
+      VIEW_DISTANCE: "28"
+      SPAWN_PROTECTION: "0"
+      ENABLE_WHITELIST: "true"
+      WHITELIST: |-
+        ingameName
+    volumes:
+      - "./data:/data"
